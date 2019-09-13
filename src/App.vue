@@ -3,7 +3,7 @@
   <div class="main app">
     <h1>Pokemon Search!</h1>
       <div>
-        <pokemon-list :pokemon="allPokemon"></pokemon-list>
+        <pokemon-filter :pokemon="allPokemon"></pokemon-filter>
 
       </div>
   </div>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import PokemonList from './components/PokemonList'
+  import PokemonFilter from './components/PokemonFilter'
 
   export default {
       data() {
@@ -27,7 +27,7 @@
       .then(pokemon => this.allPokemon = pokemon.results)
     },
     components: {
-      'pokemon-list': PokemonList
+      'pokemon-filter': PokemonFilter
     }
   }
 </script>

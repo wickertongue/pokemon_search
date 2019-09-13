@@ -1,6 +1,6 @@
 <template>
 
-  <div id="pokemon-list">
+  <div id="pokemon-filter">
      <form v-on:submit.prevent>
       <select>
         <option disabled value="">Select a Pokemon...</option>
@@ -15,14 +15,10 @@
 </template>
 
 <script>
-import SinglePokemon from './SinglePokemon'
 
 export default {
-  name: 'pokemon-list',
-  props: ['pokemon'],
-  components: {
-    'single-pokemon': SinglePokemon
-  }
+  name: 'pokemon-filter',
+  props: ['pokemon']
 }
 
 </script>
