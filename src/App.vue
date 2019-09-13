@@ -1,11 +1,18 @@
 <template>
-  <div>
-    <p>Name: {{allPokemon[0].name}}</p>
-    <p>URL: {{allPokemon[0].url}}</p>
+
+  <div class="main app">
+    <h1>Pokemon Search!</h1>
+      <div>
+        <pokemon-list :pokemon="allPokemon"></pokemon-list>
+
+      </div>
   </div>
+
 </template>
 
 <script>
+  import PokemonList from './components/PokemonList'
+
   export default {
       data() {
       return {
@@ -18,6 +25,9 @@
       fetch('https://pokeapi.co/api/v2/pokemon/?limit=2000')
       .then(response => response.json())
       .then(pokemon => this.allPokemon = pokemon.results)
+    },
+    components: {
+      'pokemon-list': PokemonList
     }
   }
 </script>
