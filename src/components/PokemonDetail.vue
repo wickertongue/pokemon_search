@@ -1,14 +1,28 @@
 <template>
 
   <div v-if="pokemon" id="pokemonDetail">
-    <p>Name: {{pokemon.name}}</p>
-    <p>Link to Detail: {{pokemon.url}}</p>
-    <p>Base Experience: {{selectedPokemonDetails.base_experience}}</p>
+    <h3>Name: {{pokemon.name}}</h3>
+      <ul>
+        <li>Base Experience: {{selectedPokemonDetails.base_experience}}</li>
+        <li>Height: {{selectedPokemonDetails.height}}</li>
+        <li>Weight: {{selectedPokemonDetails.weight}}</li>
+        <li>Species: {{selectedPokemonDetails.species.name}}</li>
+      </ul>
+        <div>
+          <h4>Types:</h4>
+            <ul>
+              <li v-for="type in selectedPokemonDetails.types">
+                <span v-for="object in type">
+                  {{object.name}}
+                </span>
+              </li>
+            </ul>
+        </div>
     <div class="images">
-      <img
-      v-if="selectedPokemonDetails.sprites"
-      v-for="image in selectedPokemonDetails.sprites"
-      :src="image" alt="image of pokemon">
+      <img 
+        v-if="selectedPokemonDetails.sprites!==null"
+        v-for="image in selectedPokemonDetails.sprites" 
+        :src="image" alt="image of pokemon">
     </div>
   </div>
   
