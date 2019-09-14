@@ -4,7 +4,9 @@
     <h1>Pokemon Search!</h1>
       <div>
         <pokemon-filter :pokemon="allPokemon"></pokemon-filter>
-        <pokemon-detail :pokemon="selectedPokemon"></pokemon-detail>
+        <pokemon-detail 
+          :pokemon="selectedPokemon" 
+          :selected-pokemon-details="selectedPokemonDetails"></pokemon-detail>
       </div>
   </div>
 
@@ -31,6 +33,9 @@
 
       eventBus.$on('selected-pokemon', (singlePokemon) => {
       this.selectedPokemon = singlePokemon;
+      fetch(this.selectedPokemon.url)
+      .then(response => response.json())
+      .then(pokemon => this.selectedPokemonDetails = pokemon);
       });
     },
     components: {
@@ -40,7 +45,10 @@
   }
 </script>
 
-<style>
+<style scoped>
+
+div {
+  border: 1px solid black;
+}
 
 </style>
-

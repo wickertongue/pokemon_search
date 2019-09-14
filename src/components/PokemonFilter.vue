@@ -27,17 +27,16 @@ export default {
 
   data(){
     return {
-      "selectedPokemon": {},
-      "selectedPokemonDetailsUrl": null,
+      "selectedPokemon": "",
       "searchedPokemon": "",
-      "pokemonDetails" : []
+      "pokemonDetails" : null
     }
   },
   props: ['pokemon'],
   methods: {
     handleSelect() {
+      this.searchedPokemon = "";
       eventBus.$emit('selected-pokemon', this.selectedPokemon)
-      this.selectedPokemonDetailsUrl = this.selectedPokemon.url;
     },
     searchForPokemon(){
       let foundPokemon = this.pokemon.find((pokemon) => {
@@ -46,18 +45,16 @@ export default {
       this.selectedPokemon = foundPokemon
 
       eventBus.$emit('selected-pokemon', this.selectedPokemon)
-    },
-  },
-  computed: {
-    fetchDetails: function() {return fetch(`this.selectedPokemonDetailsUrl`)
-      .then(response => response.json())
-      .then(pokemon => this.pokemonDetails = pokemon);
-    }  
+    }
   }
 }
 
 </script>
 
-<style>
+<style scoped>
+
+div {
+  border: 1px solid black;
+}
 
 </style>
