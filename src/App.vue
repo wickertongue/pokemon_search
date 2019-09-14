@@ -4,7 +4,7 @@
     <h1>Pokemon Search!</h1>
       <div>
         <pokemon-filter :pokemon="allPokemon"></pokemon-filter>
-
+        <pokemon-detail :pokemon="selectedPokemon"></pokemon-detail>
       </div>
   </div>
 
@@ -12,6 +12,7 @@
 
 <script>
   import PokemonFilter from './components/PokemonFilter'
+  import PokemonDetail from './components/PokemonDetail'
   import {eventBus} from './main'
 
   export default {
@@ -19,20 +20,22 @@
       return {
         allPokemon: [],
         favouritePokemon: [],
-        selectedPokemon: null
+        selectedPokemon: null,
+        selectedPokemonDetails: null
       }
     },
     mounted() {
       fetch('https://pokeapi.co/api/v2/pokemon/?limit=2000')
       .then(response => response.json())
-      .then(pokemon => this.allPokemon = pokemon.results)
+      .then(pokemon => this.allPokemon = pokemon.results);
 
       eventBus.$on('selected-pokemon', (singlePokemon) => {
       this.selectedPokemon = singlePokemon;
-      })
+      });
     },
     components: {
-      'pokemon-filter': PokemonFilter
+      'pokemon-filter': PokemonFilter,
+      'pokemon-detail': PokemonDetail
     }
   }
 </script>
@@ -40,5 +43,4 @@
 <style>
 
 </style>
-
 
