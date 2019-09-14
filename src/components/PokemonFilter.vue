@@ -4,7 +4,7 @@
      <form v-on:submit.prevent>
       <select v-on:change="handleSelect" v-model="selectedPokemon">
         <option disabled value="">Select a Pokemon...</option>
-        <option v-for="(pokemon, index) in pokemon" :pokemon='pokemon' :key="index">
+        <option v-for="(pokemon, index) in pokemon" :pokemon='pokemon' :key="index" :value="pokemon">
          {{pokemon.name}}
         </option>
       </select>
