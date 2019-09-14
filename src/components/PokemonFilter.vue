@@ -1,13 +1,13 @@
 <template>
 
-  <div id="pokemon-filter">
-    <div>
+  <div>
+    <div id="pokemon-search">
       <form>
       <input type="text" v-model="searchedPokemon" placeholder="search for a Pokemon..." v-on:keyup="searchForPokemon">
       </form>
     </div>
 
-    <div>
+    <div id="pokemon-select">
       <select v-on:change="handleSelect" v-model="selectedPokemon">
         <option disabled value="">Select a Pokemon...</option>
         <option v-for="(pokemon, index) in pokemon" :pokemon='pokemon' :key="index" :value="pokemon">
@@ -53,8 +53,16 @@ export default {
 
 <style scoped>
 
+#pokemon-search {
+  float: left;
+}
+
+#pokemon-search {
+  float: right;
+}
+
 div {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 </style>

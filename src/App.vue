@@ -1,6 +1,6 @@
 <template>
 
-  <div class="main app">
+  <div class="mainApp">
     <h1>Pokemon Search!</h1>
       <div>
         <pokemon-filter :pokemon="allPokemon"></pokemon-filter>
@@ -46,9 +46,14 @@
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
-div {
-  border: 1px solid black;
+.mainApp {
+  margin: 10px;
+}
+
+h1 {
+  font-family: 'Press Start 2P';
 }
 
 </style>
