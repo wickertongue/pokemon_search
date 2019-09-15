@@ -54,11 +54,11 @@ export default {
 <style scoped>
 
 #pokemon-search {
-  float: left;
+  padding: 10px;
 }
 
-#pokemon-search {
-  float: right;
+#pokemon-select {
+  padding: 10px;
 }
 
 div {

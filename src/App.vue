@@ -49,7 +49,10 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
 .mainApp {
-  margin: 10px;
+  margin: 10px;     
+  padding: 20px;
+  background-color: #ffcb05;
+  border: 10px solid #2a75bb;
 }
 
 h1 {
