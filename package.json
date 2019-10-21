@@ -1,12 +1,15 @@
 {
   "name": "pokemon",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.8.0"
+  },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "postinstall": "npm run build",
-    "start": "node main.js"
+    "heroku-postbuild": "npm run build",
+    "start": "node server.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
