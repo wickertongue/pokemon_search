@@ -1,4 +1,6 @@
-# pokemon
+# Pokemon Search
+
+Pokemon search is now [available via Heroku](https://pokemon-search-vue.herokuapp.com/)
 
 ## Project setup
 ```
