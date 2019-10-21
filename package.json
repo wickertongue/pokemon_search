@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "postinstall": "npm run build",
+    "start": "node src/main.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
