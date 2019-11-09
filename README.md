@@ -1,9 +1,11 @@
-# pokemon
+# Pokemon Search!
+Pokemon search is now available via [Heroku](https://pokemon-search-vue.herokuapp.com/)
 
-## Project setup
-```
-npm install
-```
+![Image of PokemonSearch](src/assets/screen.png)
+
+## To set up Pokemon Search on your local computer
+
+Pull down the files and save ina  local directory, then run ```npm install``` in a terminal within that directory. Finally, run ```npm run serve``` to compile and navigate to localhost:8080
 
 ### Compiles and hot-reloads for development
 ```
